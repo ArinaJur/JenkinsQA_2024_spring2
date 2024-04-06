@@ -66,9 +66,7 @@ public abstract class BaseTest {
 
     @AfterMethod
     protected void afterMethod(Method method, ITestResult testResult) {
-        if (testResult.isSuccess() || ProjectUtils.closeBrowserIfError()) {
-            stopDriver();
-        }
+        stopDriver();
 
         ProjectUtils.logf("Execution time is %o sec\n\n", (testResult.getEndMillis() - testResult.getStartMillis()) / 1000);
     }
